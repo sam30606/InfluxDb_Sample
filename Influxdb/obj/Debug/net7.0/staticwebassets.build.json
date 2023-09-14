@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "lO37aACFmGiNFwZQEQchBwOS71fLBf9n7rH0M4+BKC8=",
+  "Source": "Influxdb",
+  "BasePath": "_content/Influxdb",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "Influxdb.Service";
+
+package Sample;
+
+// The greeting service definition.
+service Sample {
+  // Sends a greeting
+  rpc Sample (SampleRequest) returns ( SampleReply);
+}
+
+message  SampleRequest{
+  string  sensor_id=1;
+  float  co=2;
+  float  humidity=3;
+  float  temperature=4;
+  string TimeRange =5;
+  optional string Method=6;
+  optional double AggregateSec=7;
+}
+message  SampleReply{
+  string message = 1;
+}
