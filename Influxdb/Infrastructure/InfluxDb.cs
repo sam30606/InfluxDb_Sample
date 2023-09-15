@@ -29,7 +29,7 @@ namespace Influxdb.Infrastructure
             };
 
         }
-        public  void WritePoint<T>(PointData point, string? bucket)
+        public  void WritePoint(PointData point, string? bucket)
         {
             try
             {
