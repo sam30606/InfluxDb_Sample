@@ -1,4 +1,5 @@
 using Grpc.Core;
+using InfluxDB.Client.Api.Domain;
 using InfluxDB.Client.Core.Flux.Domain;
 using InfluxDB.Client.Writes;
 using Influxdb.Infrastructure;
@@ -28,7 +29,10 @@ namespace Influxdb.Services
                 temperature = request.Temperature,
                 Timestamp = DateTime.UtcNow.ToLocalTime()
             }, "default");
-             
+             influxDb.WritePoint( 
+                 PointData.Measurement("air_sensors").Tag("sensor_id",request.SensorId).Field("co", request.Co)
+                     .Timestamp(DateTime.UtcNow.ToLocalTime(), WritePrecision.S),"default"
+             );
             // List<SamplePoco> result = await influxDb.FetchDataLinq<SamplePoco>("default", request.SensorId, request.TimeRange, request.Method, request.AggregateSec);
             // if (result.Count != 0)
             // {
